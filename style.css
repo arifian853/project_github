@@ -69,6 +69,28 @@
      font-weight: 300;
  }
 
+ /* Primary Button */
+ .btn-primary {
+     display: inline-block;
+     margin-top: 2rem;
+     padding: 0.9rem 2.2rem;
+     background: linear-gradient(135deg, #7c5cfc, #a78bfa);
+     color: #fff;
+     text-decoration: none;
+     border-radius: 50px;
+     font-size: 0.95rem;
+     font-weight: 500;
+     letter-spacing: 0.03em;
+     transition: all 0.3s ease;
+     position: relative;
+     z-index: 1;
+ }
+
+ .btn-primary:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 8px 30px rgba(124, 92, 252, 0.35);
+ }
+
  .scroll-hint {
      position: absolute;
      bottom: 2rem;
