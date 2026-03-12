@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Lorem Ipsum — Perjalanan 2000 Tahun</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific styles */
+        .page-hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            background: radial-gradient(ellipse at 50% 0%, #1a1a2e 0%, #0a0a0a 70%);
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 30% 40%, rgba(120, 80, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(255, 100, 80, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .page-hero .hero-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #7c5cfc;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a78bfa 50%, #f97066 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-hero p {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: #888;
+            max-width: 600px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #7c5cfc;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #a78bfa;
+        }
+
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, rgba(124, 92, 252, 0.3), rgba(124, 92, 252, 0.3), transparent);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .timeline-content:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(124, 92, 252, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .timeline-year {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #7c5cfc;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.95rem;
+            color: #888;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: #7c5cfc;
+            border-radius: 50%;
+            border: 3px solid #0a0a0a;
+            box-shadow: 0 0 15px rgba(124, 92, 252, 0.4);
+            z-index: 1;
+            top: 2rem;
+        }
+
+        /* Detail Section with side accent */
+        .detail-section {
+            padding: 4rem 0;
+        }
+
+        .detail-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-bottom: 4rem;
+        }
+
+        .detail-block.reverse {
+            direction: rtl;
+        }
+
+        .detail-block.reverse > * {
+            direction: ltr;
+        }
+
+        .detail-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .detail-text p {
+            font-size: 1rem;
+            color: #999;
+            line-height: 1.9;
+        }
+
+        .detail-highlight {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .detail-highlight .big-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #7c5cfc, #f97066);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-highlight p {
+            font-size: 0.95rem;
+            color: #777;
+            line-height: 1.7;
+        }
+
+        /* Latin text showcase */
+        .latin-showcase {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .latin-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #7c5cfc, #f97066, transparent);
+        }
+
+        .latin-showcase h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+
+        .latin-showcase .latin-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            line-height: 2;
+            color: #aaa;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .latin-showcase .translation {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #777;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .translation-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #7c5cfc;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            color: #888;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            background: transparent;
+            border: 1px solid rgba(124, 92, 252, 0.4);
+            color: #a78bfa;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+        }
+
+        .btn-back:hover {
+            background: rgba(124, 92, 252, 0.1);
+            border-color: #7c5cfc;
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 1.5rem;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+                padding-left: 3.5rem;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-dot {
+                left: 1.5rem;
+            }
+
+            .detail-block,
+            .detail-block.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">LI.</a>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#fakta">Fakta</a></li>
+            <li><a href="index.html#teks">Teks Asli</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <a href="index.html" class="back-link">
+            <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Kembali ke Beranda
+        </a>
+        <div class="hero-label">Perjalanan 2000 Tahun</div>
+        <h1>Sejarah Lengkap<br>Lorem Ipsum</h1>
+        <p>Menelusuri jejak teks placeholder paling legendaris dari Romawi Kuno hingga era digital modern.</p>
+    </section>
+
+    <!-- Timeline -->
+    <section>
+        <div class="section-label">Linimasa</div>
+        <h2>Perjalanan Melintasi Waktu</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">45 SM</div>
+                    <h3>Cicero Menulis "de Finibus"</h3>
+                    <p>Marcus Tullius Cicero, filsuf dan orator Romawi, menulis risalah filosofis <em>"de Finibus Bonorum et Malorum"</em> (Tentang Batas Kebaikan dan Kejahatan). Buku ini membahas teori etika Epicurean, Stoic, dan Peripatetic. Bagian 1.10.32–33 dari karya inilah yang menjadi sumber teks Lorem Ipsum.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">Abad ke-15</div>
+                    <h3>Era Percetakan Gutenberg</h3>
+                    <p>Johannes Gutenberg menemukan mesin cetak bergerak sekitar tahun 1440. Penemuan revolusioner ini mengubah cara produksi buku dan membuka jalan bagi penggunaan teks-teks standar dalam proses percetakan, termasuk potongan teks Latin sebagai placeholder.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">~1500</div>
+                    <h3>Pencetak Tak Dikenal</h3>
+                    <p>Seorang pencetak anonim mengambil sebuah galley of type dan mengacaknya untuk membuat buku spesimen huruf. Inilah momen bersejarah ketika teks Cicero ditransformasi menjadi Lorem Ipsum yang kita kenal. Teks tersebut sengaja dimodifikasi — kata-kata ditambah, dihilangkan, dan diubah — sehingga tidak lagi bermakna dalam bahasa Latin yang benar.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">1914</div>
+                    <h3>Terjemahan H. Rackham</h3>
+                    <p>H. Rackham menerbitkan terjemahan bahasa Inggris standar dari <em>"de Finibus Bonorum et Malorum"</em> dalam seri Loeb Classical Library. Terjemahan ini membantu para akademisi memahami konteks asli dari teks yang menjadi dasar Lorem Ipsum dan menjadi referensi utama hingga saat ini.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">1960-an</div>
+                    <h3>Letraset dan Popularitas Massal</h3>
+                    <p>Perusahaan Letraset merilis lembar-lembar transfer kering yang berisi bagian-bagian Lorem Ipsum. Produk ini sangat populer di kalangan desainer grafis dan art director, menjadikan Lorem Ipsum sebagai standar industri yang diakui secara universal untuk teks dummy.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">1985</div>
+                    <h3>Aldus PageMaker</h3>
+                    <p>Aldus Corporation merilis PageMaker, salah satu perangkat lunak desktop publishing pertama. Program ini menyertakan Lorem Ipsum sebagai teks placeholder bawaan, membawa teks kuno ini ke era komputer dan mengukuhkan posisinya dalam dunia desain digital.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">Hari Ini</div>
+                    <h3>Standar Universal</h3>
+                    <p>Lorem Ipsum digunakan di mana-mana — dari mockup website, aplikasi mobile, hingga presentasi bisnis. Generator Lorem Ipsum tersedia secara online, dan teks ini terintegrasi ke dalam hampir setiap alat desain dan pengembangan modern seperti Figma, Sketch, VS Code, dan lainnya.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Detail: Cicero -->
+    <section>
+        <div class="section-label">Tokoh Kunci</div>
+        <h2>Marcus Tullius Cicero</h2>
+
+        <div class="detail-block">
+            <div class="detail-text">
+                <h3>Sang Orator Agung Roma</h3>
+                <p>Cicero (106–43 SM) adalah salah satu tokoh paling berpengaruh dalam sejarah Romawi. Ia dikenal sebagai orator, filsuf, politikus, dan penulis. Prosa-prosanya dianggap sebagai contoh tertinggi bahasa Latin klasik.</p>
+                <p>Karya utamanya, <em>"de Finibus Bonorum et Malorum"</em>, membahas teori-teori etika dari berbagai aliran filsafat Yunani. Buku ini ditulis dalam bentuk dialog dan terdiri dari lima buku yang mengeksplorasi konsep kebaikan tertinggi (summum bonum) menurut pandangan Epicurean, Stoic, dan Academic.</p>
+            </div>
+            <div class="detail-highlight">
+                <div class="big-number">106 SM</div>
+                <p>Tahun kelahiran Cicero di Arpinum, Italia. Ia tumbuh menjadi salah satu intelektual terbesar Romawi dan pengaruhnya terhadap sastra Latin berlanjut hingga ribuan tahun kemudian — bahkan melalui Lorem Ipsum.</p>
+            </div>
+        </div>
+
+        <div class="detail-block reverse">
+            <div class="detail-text">
+                <h3>Penemuan oleh Richard McClintock</h3>
+                <p>Pada abad ke-20, banyak orang menganggap Lorem Ipsum hanyalah rangkaian kata Latin acak tanpa makna. Namun pada tahun 1982, Richard McClintock — seorang profesor bahasa Latin di Hampden-Sydney College, Virginia — berhasil menelusuri asal-usulnya.</p>
+                <p>McClintock memperhatikan kata "consectetur" yang sangat jarang ditemukan dalam literatur Latin. Melalui penelusuran intensif, ia berhasil menemukan bahwa kata tersebut berasal dari bagian 1.10.32 karya Cicero. Penemuannya ini akhirnya mengungkap misteri di balik Lorem Ipsum yang telah membingungkan banyak orang selama berabad-abad.</p>
+            </div>
+            <div class="detail-highlight">
+                <div class="big-number">1982</div>
+                <p>Tahun ketika Richard McClintock secara definitif mengidentifikasi sumber Lorem Ipsum. Penemuan ini mengubah cara pandang dunia terhadap teks placeholder yang dianggap tidak bermakna.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Teks Latin Asli -->
+    <section>
+        <div class="section-label">Sumber Asli</div>
+        <h2>Teks Asli dari Cicero</h2>
+        <p>Berikut adalah bagian 1.10.32 dari <em>"de Finibus Bonorum et Malorum"</em> karya Cicero — sumber asli dari Lorem Ipsum beserta terjemahannya.</p>
+
+        <div class="latin-showcase">
+            <h3>Bagian 1.10.32 — Teks Latin</h3>
+            <p class="latin-text">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."</p>
+            <div class="translation-label">Terjemahan Bahasa Indonesia</div>
+            <p class="translation">"Tetapi agar kalian dapat melihat dari mana semua kesalahan yang lahir dari mereka yang mencela kesenangan dan memuji rasa sakit, saya akan membuka seluruh masalah ini, dan menjelaskan hal-hal yang sebenarnya dikatakan oleh penemu kebenaran dan, bisa dikatakan, arsitek kehidupan yang bahagia. Karena tidak ada seorang pun yang menolak, tidak menyukai, atau menghindari kesenangan itu sendiri, karena ia adalah kesenangan, tetapi karena konsekuensi besar yang menyakitkan menimpa mereka yang tidak tahu bagaimana mengejar kesenangan secara rasional."</p>
+        </div>
+
+        <div class="latin-showcase">
+            <h3>Bagian 1.10.33 — Teks Latin</h3>
+            <p class="latin-text">"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga."</p>
+            <div class="translation-label">Terjemahan Bahasa Indonesia</div>
+            <p class="translation">"Tetapi sesungguhnya kami menuduh dan menganggap layak dibenci mereka yang dimanjakan dan dirusak oleh rayuan kesenangan saat ini, yang tidak mau melihat rasa sakit dan kesulitan apa yang akan menimpa mereka karena kebutaan nafsu, dan sama bersalahnya adalah mereka yang meninggalkan kewajiban karena kelemahan jiwa, yaitu menghindari kerja keras dan kesengsaraan."</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Perbandingan -->
+    <section>
+        <div class="section-label">Perbandingan</div>
+        <h2>Lorem Ipsum vs Teks Asli Cicero</h2>
+        <p>Menariknya, Lorem Ipsum yang kita gunakan sehari-hari sebenarnya adalah versi yang telah dimodifikasi dari teks asli Cicero. Beberapa perbedaan utamanya:</p>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">✂️</div>
+                <h3>Kata Dihilangkan</h3>
+                <p>Beberapa kata dari teks asli dihilangkan untuk membuat teks terlihat lebih acak dan tidak mudah dikenali sebagai bahasa Latin yang sesungguhnya.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔀</div>
+                <h3>Urutan Diacak</h3>
+                <p>Urutan kata dan kalimat diubah dari susunan aslinya, sehingga teks kehilangan makna filosofis orisinilnya namun tetap terlihat natural.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">➕</div>
+                <h3>Kata Ditambahkan</h3>
+                <p>Kata-kata baru yang bukan dari teks asli ditambahkan, seperti "Lorem" yang sebenarnya adalah potongan dari kata "dolorem" dalam teks Cicero.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔤</div>
+                <h3>"Lorem" = "Dolorem"</h3>
+                <p>Kata pertama "Lorem" sebenarnya bukan kata Latin yang utuh. Ini adalah bagian akhir dari kata "dolorem" (rasa sakit) yang terpotong dari kalimat aslinya.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Kembali Menjelajah</h2>
+        <p>Jelajahi lebih banyak tentang Lorem Ipsum — fakta menarik, teks asli, dan fakta-fakta lain yang mungkin belum Anda ketahui.</p>
+        <a href="index.html" class="btn-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Kembali ke Halaman Utama
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo">Lorem Ipsum.</div>
+        <p>&copy; 2026 — Dibuat dengan ❤️ untuk pecinta tipografi dan desain.</p>
+    </footer>
+
+</body>
+
+</html>
